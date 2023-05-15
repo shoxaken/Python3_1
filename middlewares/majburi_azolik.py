@@ -2,13 +2,12 @@ from aiogram import  types
 from aiogram.dispatcher.handler import CancelHandler
 from aiogram.dispatcher.middlewares import BaseMiddleware
 from aiogram.types import InlineKeyboardMarkup , InlineKeyboardButton
-
 from data.config import kannalar
 from data.tekshirish import checking
 from loader import bot
 
 class Asosiy_checking(BaseMiddleware):
-    async def on_pre_process_update(self, xabar:types.Update,data:dict):
+    async def on_pre_process_update(self, xabar:types.Update, data:dict,):
         if xabar.message:
             user_id = xabar.message.from_user.id
         elif xabar.callback_query:
